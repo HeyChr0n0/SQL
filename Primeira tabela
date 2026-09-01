@@ -1,0 +1,46 @@
+CREATE TABLE instituicoes (
+    id INT,
+    nome TEXT,
+    pais TEXT
+);
+
+CREATE TABLE cursos (
+    id INT,
+    instituicao_id INT,
+    nome TEXT,
+    nivel TEXT
+);
+
+CREATE TABLE disciplinas (
+    id INT,
+    curso_id INT,
+    nome TEXT,
+    periodo INT,
+    carga_horaria INT
+);
+
+CREATE TABLE progresso (
+    id INT,
+    disciplina_id INT,
+    status TEXT,
+    nota REAL
+);
+
+INSERT INTO instituicoes VALUES (1, 'Uninter', 'Brasil');
+INSERT INTO instituicoes VALUES (2, 'Uninter', 'Portugal');
+
+INSERT INTO cursos VALUES (1, 1, 'Engenharia de Software', 'Graduação');
+INSERT INTO cursos VALUES (2, 2, 'Engenharia de Software', 'Graduação Internacional');
+
+INSERT INTO disciplinas VALUES (1, 1, 'Lógica de Programação e Algoritmos', 1, 80);
+INSERT INTO disciplinas VALUES (2, 1, 'Fundamentos de Banco de Dados', 1, 80);
+INSERT INTO disciplinas VALUES (3, 1, 'Engenharia de Requisitos', 2, 60);
+
+INSERT INTO progresso VALUES (1, 1, 'Concluído', 10.0);
+INSERT INTO progresso VALUES (2, 2, 'Em Andamento', NULL);
+INSERT INTO progresso VALUES (3, 3, 'Pendente', NULL);
+
+SELECT * FROM instituicoes;
+SELECT * FROM cursos;
+SELECT * FROM disciplinas;
+SELECT * FROM progresso;
